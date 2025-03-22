@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICU Survey Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        form { max-width: 600px; margin: auto; }
+        label, input, textarea, select { display: block; width: 100%; margin-bottom: 10px; }
+        input, textarea, select { padding: 8px; }
+        input[type="submit"] { background: blue; color: white; border: none; padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Survey for Participating ICUs</h2>
+    <form name="icuSurvey" method="POST" data-netlify="true">
+        <h3>Section 1: General Information</h3>
+        <label>ICU Name: <input type="text" name="icu_name" required></label>
+        <label>Hospital Name: <input type="text" name="hospital_name" required></label>
+        <label>Location: <input type="text" name="location" required></label>
+        <label>Number of ICU Beds: <input type="number" name="icu_beds" required></label>
+        <label>Number of ICU Physicians and Nurses: <input type="number" name="icu_staff" required></label>
+        <label>Current Palliative Care Integration Status:
+            <select name="palliative_care">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </label>
+        <label>Name of Main Contact Person and Role: <input type="text" name="contact_person" required></label>
+        
+        <h3>Section 2: Current Practices and Infrastructure</h3>
+        <label>How is end-of-life care currently managed? <textarea name="eol_management"></textarea></label>
+        <label>What tools or protocols are used for prognostication and futility assessment? <textarea name="prognostication_tools"></textarea></label>
+        <label>Are family meetings conducted for shared decision-making?
+            <select name="family_meetings">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </label>
+        <label>Key barriers to providing palliative care: <textarea name="barriers"></textarea></label>
+        
+        <h3>Section 3: Staff Knowledge and Attitudes</h3>
+        <label>How confident are ICU staff in managing end-of-life care?
+            <select name="confidence">
+                <option value="Not confident">Not confident</option>
+                <option value="Somewhat confident">Somewhat confident</option>
+                <option value="Confident">Confident</option>
+                <option value="Very confident">Very confident</option>
+            </select>
+        </label>
+        <label>Have ICU staff received prior training in palliative care?
+            <select name="training">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </label>
+        <label>Perceived benefits of integrating palliative care: <textarea name="benefits"></textarea></label>
+        
+        <h3>Section 4: Family and Patient Support</h3>
+        <label>How is family communication and emotional support handled? <textarea name="family_support"></textarea></label>
+        <label>Are family preferences for end-of-life care documented?
+            <select name="family_preferences">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </label>
+        <label>Primary concerns expressed by families: <textarea name="family_concerns"></textarea></label>
+        
+        <h3>Section 5: Resource Utilization and Cost Management</h3>
+        <label>Average length of stay for terminally ill patients (days): <input type="number" name="length_of_stay"></label>
+        <label>Common non-beneficial treatments administered: <textarea name="non_beneficial_treatments"></textarea></label>
+        <label>How are ICU costs managed for terminal patients? <textarea name="cost_management"></textarea></label>
+        
+        <h3>Section 6: Readiness for MCACP Implementation</h3>
+        <label>Are ICU staff willing to adopt a structured palliative care package?
+            <select name="willingness">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </label>
+        <label>Resources or support needed for successful implementation: <textarea name="resources_needed"></textarea></label>
+        <label>Potential challenges in implementing MCACP: <textarea name="challenges"></textarea></label>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
